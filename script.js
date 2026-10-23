@@ -1,8 +1,10 @@
-// Shopify mağaza linkini buradan tek yerden güncelle
-const SHOPIFY_STORE_URL = "https://REPLACE-WITH-YOUR-STORE.myshopify.com";
+// Sipariş/iletişim linkini buradan tek yerden güncelle
+const ORDER_LINK = "https://instagram.com/epoksac";
 
 document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
-  el.setAttribute("href", SHOPIFY_STORE_URL);
+  el.setAttribute("href", ORDER_LINK);
+  el.setAttribute("target", "_blank");
+  el.setAttribute("rel", "noopener");
 });
 
 // Mobil menü
