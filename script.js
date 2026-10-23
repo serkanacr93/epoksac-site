@@ -9,6 +9,15 @@ document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
   el.setAttribute("rel", "noopener");
 });
 
+// Logo tıklanınca URL'de #top göstermeden en üste kaydır
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+  });
+});
+
 // Mobil menü
 const navToggle = document.getElementById("nav-toggle");
 const nav = document.getElementById("nav");
