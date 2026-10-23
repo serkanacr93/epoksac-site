@@ -1,5 +1,7 @@
 // Sipariş/iletişim linkini buradan tek yerden güncelle
-const ORDER_LINK = "https://instagram.com/epoksac";
+const WHATSAPP_NUMBER = "905465741867";
+const WHATSAPP_MESSAGE = encodeURIComponent("Merhaba, Ay-Yıldız dekoratif obje hakkında bilgi almak istiyorum.");
+const ORDER_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
 document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
   el.setAttribute("href", ORDER_LINK);
