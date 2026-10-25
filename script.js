@@ -1,7 +1,18 @@
 // Sipariş/iletişim linkini buradan tek yerden güncelle
 const WHATSAPP_NUMBER = "905465741867";
-const WHATSAPP_MESSAGE = encodeURIComponent("Merhaba, Ay-Yıldız dekoratif obje hakkında bilgi almak istiyorum.");
-const ORDER_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+
+// Sayfaya göre genel "Sipariş Ver / WhatsApp'tan Yaz" mesajı.
+// Her sayfanın <body> etiketine data-context="ay-yildiz" / "minare-kubbe" / "duvar-kalip" eklenir.
+const CONTEXT_MESSAGES = {
+  "ay-yildiz": "Merhaba, Ay-Yıldız dekoratif obje hakkında bilgi almak istiyorum.",
+  "minare-kubbe": "Merhaba, Minare & Kubbe projesi için teklif almak istiyorum.",
+  "duvar-kalip": "Merhaba, Duvar Kalıbı projesi için teklif almak istiyorum.",
+  "genel": "Merhaba, Epoksac ürünleri hakkında bilgi almak istiyorum."
+};
+
+const pageContext = document.body.getAttribute("data-context") || "genel";
+const ORDER_MESSAGE = CONTEXT_MESSAGES[pageContext] || CONTEXT_MESSAGES.genel;
+const ORDER_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(ORDER_MESSAGE)}`;
 
 document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
   el.setAttribute("href", ORDER_LINK);
@@ -9,7 +20,8 @@ document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
   el.setAttribute("rel", "noopener");
 });
 
-// Minare / Kubbe gibi özel sipariş butonları için ürüne özel mesaj
+// Minare / Kubbe / Duvar Kalıbı gibi özel sipariş butonları için ürüne özel mesaj
+// (sayfa bağlamından daha spesifik olduğu için öncelikli kalır)
 document.querySelectorAll(".shop-link-custom").forEach((el) => {
   const urun = el.getAttribute("data-urun") || "özel sipariş";
   const msg = encodeURIComponent(`Merhaba, ${urun} projesi için teklif almak istiyorum.`);
@@ -18,7 +30,7 @@ document.querySelectorAll(".shop-link-custom").forEach((el) => {
   el.setAttribute("rel", "noopener");
 });
 
-// Logo tıklanınca URL'de #top göstermeden en üste kaydır
+// Logo tıklanınca ana sayfanın en üstüne git
 document.querySelectorAll('a[href="#top"]').forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -30,12 +42,15 @@ document.querySelectorAll('a[href="#top"]').forEach((link) => {
 // Mobil menü
 const navToggle = document.getElementById("nav-toggle");
 const nav = document.getElementById("nav");
-navToggle.addEventListener("click", () => {
-  nav.classList.toggle("open");
-});
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
-});
+if (navToggle && nav) {
+  navToggle.addEventListener("click", () => {
+    nav.classList.toggle("open");
+  });
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => nav.classList.remove("open"));
+  });
+}
 
 // Footer yılı
-document.getElementById("year").textContent = new Date().getFullYear();
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
