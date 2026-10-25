@@ -9,6 +9,15 @@ document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
   el.setAttribute("rel", "noopener");
 });
 
+// Minare / Kubbe gibi özel sipariş butonları için ürüne özel mesaj
+document.querySelectorAll(".shop-link-custom").forEach((el) => {
+  const urun = el.getAttribute("data-urun") || "özel sipariş";
+  const msg = encodeURIComponent(`Merhaba, ${urun} projesi için teklif almak istiyorum.`);
+  el.setAttribute("href", `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`);
+  el.setAttribute("target", "_blank");
+  el.setAttribute("rel", "noopener");
+});
+
 // Logo tıklanınca URL'de #top göstermeden en üste kaydır
 document.querySelectorAll('a[href="#top"]').forEach((link) => {
   link.addEventListener("click", (e) => {

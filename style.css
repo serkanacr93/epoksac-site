@@ -239,6 +239,42 @@ p { color: var(--ink-soft); margin: 0 0 16px; }
 .features li strong { color: var(--ink); font-weight: 600; }
 .note { font-size: 13px; font-style: italic; color: var(--ink-soft); opacity: 0.75; }
 
+/* Custom orders (minare/kubbe) */
+.custom { padding: 120px 0; }
+.custom-intro { max-width: 560px; margin-left: auto; margin-right: auto; }
+.custom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 48px;
+}
+.custom-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.custom-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--bg-panel);
+}
+.custom-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.custom-copy { padding: 28px; }
+.custom-copy h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: var(--ink);
+}
+.custom-copy p { font-size: 14px; margin: 0 0 20px; }
+.custom-note { font-size: 13px; color: var(--ink-soft); opacity: 0.8; margin: 32px 0 0; }
+
 /* Steps */
 .steps { padding: 100px 0; background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .steps-grid {
@@ -375,4 +411,5 @@ p { color: var(--ink-soft); margin: 0 0 16px; }
   .steps-grid { grid-template-columns: 1fr; gap: 36px; }
   .steps-grid::before { display: none; }
   .contact-card { padding: 40px 24px; }
+  .custom-grid { grid-template-columns: 1fr; gap: 28px; }
 }
