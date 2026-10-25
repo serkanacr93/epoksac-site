@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -20,11 +20,9 @@
   <div class="wrap header-inner">
     <a href="#top" class="logo">EPOKS<span class="accent">AC</span></a>
     <nav class="nav" id="nav">
-      <a href="#urun">Ürün</a>
-      <a href="#ozel-uretim">Özel Üretim</a>
+      <a href="#urun">Ay-Yıldız</a>
+      <a href="#ozel-uretim">Minare &amp; Kubbe</a>
       <a href="#duvar-kalip">Duvar Kalıpları</a>
-      <a href="#projeler">Projelerimiz</a>
-      <a href="#surec">Nasıl Sipariş Verilir</a>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#iletisim">İletişim</a>
     </nav>
@@ -42,14 +40,44 @@
       <div class="hero-inner">
         <p class="eyebrow">El Yapımı Epoksi &amp; Polyester Tasarım</p>
         <h1>Özel üretim,<br>özenli işçilik.</h1>
-        <p class="hero-sub">Her parça elle dökülüp şekillendirilir. Tek seferlik değil, seninle kalacak bir obje.</p>
+        <p class="hero-sub">Dekoratif objeden cami minaresine, bahçe duvarından kubbeye — her parça elle dökülür, şekillendirilir.</p>
         <div class="hero-actions">
-          <a href="#urun" class="btn btn-primary">Ürünü İncele</a>
           <a href="#" class="btn btn-outline shop-link" target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
         </div>
       </div>
       <div class="hero-visual">
         <img src="assets/ay-yildiz.jpg" alt="Ay-Yıldız dekoratif obje, siyah mat epoksi ve polyester">
+      </div>
+    </div>
+  </section>
+
+  <section class="service-nav">
+    <div class="wrap">
+      <div class="service-nav-grid">
+        <a href="#urun" class="service-card">
+          <div class="service-card-img"><img src="assets/ay-yildiz.jpg" alt="Ay-Yıldız dekoratif obje"></div>
+          <div class="service-card-copy">
+            <span class="eyebrow">Perakende</span>
+            <h3>Dekoratif Ürünler</h3>
+            <p>Ay-Yıldız ve diğer el yapımı objeler</p>
+          </div>
+        </a>
+        <a href="#ozel-uretim" class="service-card">
+          <div class="service-card-img"><img src="assets/minare.jpg" alt="Minare ve kubbe üretimi"></div>
+          <div class="service-card-copy">
+            <span class="eyebrow">Özel Sipariş</span>
+            <h3>Minare &amp; Kubbe</h3>
+            <p>Cami projeleri için kalıp ve montaj</p>
+          </div>
+        </a>
+        <a href="#duvar-kalip" class="service-card">
+          <div class="service-card-img"><img src="assets/duvar-hero.jpg" alt="Duvar ve bahçe kalıpları"></div>
+          <div class="service-card-copy">
+            <span class="eyebrow">Özel Sipariş</span>
+            <h3>Duvar &amp; Bahçe Kalıpları</h3>
+            <p>Desenli bahçe duvarı ve çit panelleri</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -75,6 +103,7 @@
     </div>
   </section>
 
+  <!-- ================= AY-YILDIZ (perakende ürün) ================= -->
   <section class="product" id="urun">
     <div class="wrap product-inner">
       <div class="product-image">
@@ -94,8 +123,32 @@
         <a href="#" class="btn btn-primary shop-link" target="_blank" rel="noopener">Fiyat Sor &amp; Sipariş Ver</a>
       </div>
     </div>
+    <div class="wrap">
+      <div class="mini-steps">
+        <p class="eyebrow center">Süreç</p>
+        <h3 class="center mini-steps-h3">Nasıl sipariş verilir?</h3>
+        <div class="steps-grid steps-grid-3 steps-grid-mini">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Mesaj gönder</h3>
+            <p>WhatsApp ya da Instagram'dan ürünle ilgili yaz, aklındaki soruları sor.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Detayları netleştirelim</h3>
+            <p>Fiyat, üretim süresi ve kargo bilgisini birlikte teyit edelim.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Özenle paketlenip gönderilir</h3>
+            <p>Siparişin elle paketlenir ve Türkiye geneli kargo ile adresine ulaştırılır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- ================= MİNARE & KUBBE (B2B özel sipariş) ================= -->
   <section class="custom" id="ozel-uretim">
     <div class="wrap">
       <p class="eyebrow center">Özel Sipariş</p>
@@ -123,10 +176,30 @@
           </div>
         </div>
       </div>
+      <p class="eyebrow center desen-title">Tamamlanan İşler</p>
+      <h3 class="center desen-h3">İlgili Projeler</h3>
+      <div class="mini-gallery">
+        <div class="proje-card">
+          <img src="assets/proje-minare-kubbe.jpg" alt="Gece ışıklı minare ve kubbe, Konya">
+          <span class="proje-tag">Konya</span>
+          <span class="proje-cat">Minare &amp; Kubbe</span>
+        </div>
+        <div class="proje-card">
+          <img src="assets/proje-montaj.jpg" alt="Minare montajı sırasında işçi ve vinç">
+          <span class="proje-tag">İstanbul</span>
+          <span class="proje-cat">Montaj</span>
+        </div>
+        <div class="proje-card">
+          <img src="assets/proje-cami.jpg" alt="Tamamlanmış cami, çift minare">
+          <span class="proje-tag">İstanbul</span>
+          <span class="proje-cat">Cami Projesi</span>
+        </div>
+      </div>
       <p class="custom-note center">Bu projeler özel sipariş usulüyle yürütülür — fiyat ve süre için önce iletişime geçmen gerekir.</p>
     </div>
   </section>
 
+  <!-- ================= DUVAR & BAHÇE KALIPLARI (B2B özel sipariş) ================= -->
   <section class="custom custom-alt" id="duvar-kalip">
     <div class="wrap">
       <div class="duvar-grid">
@@ -134,7 +207,7 @@
           <img src="assets/duvar-hero.jpg" alt="Desenli bahçe duvarı kalıbı, yıldız ve çiçek motifli panel">
         </div>
         <div class="duvar-copy">
-          <p class="eyebrow">Yeni Hizmet</p>
+          <p class="eyebrow">Özel Sipariş</p>
           <h2>Duvar &amp; Bahçe Kalıpları</h2>
           <p>Bahçe duvarı, çit ve istinat panelleri için desenli epoksi/polyester kalıp üretimi. Her ölçü ve desen özel üretilir, kendi atölyemizde kalıplanır.</p>
           <a href="#" class="btn btn-primary shop-link-custom" data-urun="Duvar Kalıbı" target="_blank" rel="noopener">Duvar Kalıbı için Teklif Al</a>
@@ -150,13 +223,16 @@
         <div class="desen-item"><img src="assets/desen-baklava.jpg" alt="Baklava ve dalga desenli duvar kalıbı çifti"></div>
         <div class="desen-item"><img src="assets/desen-tas-doku.jpg" alt="Taş doku detaylı duvar kalıbı"></div>
       </div>
+      <p class="custom-note center">Bu projeler özel sipariş usulüyle yürütülür — fiyat ve süre için önce iletişime geçmen gerekir.</p>
     </div>
   </section>
 
+  <!-- ================= ORTAK: SÜREÇ (B2B) ================= -->
   <section class="steps" id="uretim-sureci">
     <div class="wrap">
       <p class="eyebrow center">Nasıl Çalışıyoruz</p>
       <h2 class="center">Sürecimiz</h2>
+      <p class="custom-intro center">Minare, kubbe ve duvar kalıbı projeleri için izlediğimiz dört adım.</p>
       <div class="steps-grid steps-grid-4">
         <div class="step">
           <span class="step-num">1</span>
@@ -177,59 +253,6 @@
           <span class="step-num">4</span>
           <h3>Montaj &amp; Teslim</h3>
           <p>Ekibimizle yerinde montaj yapıp projeyi teslim ediyoruz.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="projeler" id="projeler">
-    <div class="wrap">
-      <p class="eyebrow center">Tamamlanan İşler</p>
-      <h2 class="center">Projelerimiz</h2>
-      <div class="projeler-grid">
-        <div class="proje-card">
-          <img src="assets/proje-minare-kubbe.jpg" alt="Gece ışıklı minare ve kubbe, Konya">
-          <span class="proje-tag">Konya</span>
-          <span class="proje-cat">Minare &amp; Kubbe</span>
-        </div>
-        <div class="proje-card">
-          <img src="assets/proje-montaj.jpg" alt="Minare montajı sırasında işçi ve vinç">
-          <span class="proje-tag">İstanbul</span>
-          <span class="proje-cat">Montaj</span>
-        </div>
-        <div class="proje-card">
-          <img src="assets/proje-bahce-duvari.jpg" alt="Yıldız ve çiçek desenli bahçe duvarı">
-          <span class="proje-tag">Konya</span>
-          <span class="proje-cat">Bahçe Duvarı</span>
-        </div>
-        <div class="proje-card">
-          <img src="assets/proje-cami.jpg" alt="Tamamlanmış cami, çift minare">
-          <span class="proje-tag">İstanbul</span>
-          <span class="proje-cat">Cami Projesi</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="steps" id="surec">
-    <div class="wrap">
-      <p class="eyebrow center">Süreç</p>
-      <h2 class="center">Nasıl sipariş verilir?</h2>
-      <div class="steps-grid">
-        <div class="step">
-          <span class="step-num">1</span>
-          <h3>Mesaj gönder</h3>
-          <p>WhatsApp ya da Instagram'dan ürünle ilgili yaz, aklındaki soruları sor.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">2</span>
-          <h3>Detayları netleştirelim</h3>
-          <p>Fiyat, üretim süresi ve kargo bilgisini birlikte teyit edelim.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">3</span>
-          <h3>Özenle paketlenip gönderilir</h3>
-          <p>Siparişin elle paketlenir ve Türkiye geneli kargo ile adresine ulaştırılır.</p>
         </div>
       </div>
     </div>
