@@ -14,7 +14,7 @@ const pageContext = document.body.getAttribute("data-context") || "genel";
 const ORDER_MESSAGE = CONTEXT_MESSAGES[pageContext] || CONTEXT_MESSAGES.genel;
 const ORDER_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(ORDER_MESSAGE)}`;
 
-document.querySelectorAll(".shop-link, #nav-shop-link").forEach((el) => {
+document.querySelectorAll(".shop-link").forEach((el) => {
   el.setAttribute("href", ORDER_LINK);
   el.setAttribute("target", "_blank");
   el.setAttribute("rel", "noopener");
@@ -54,3 +54,36 @@ if (navToggle && nav) {
 // Footer yılı
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Proje filtreleri
+const filterWrap = document.getElementById("filters");
+if (filterWrap) {
+  filterWrap.querySelectorAll(".filter").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterWrap.querySelectorAll(".filter").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.getAttribute("data-filter");
+      document.querySelectorAll(".projeler-grid .proje-card").forEach((c) => {
+        c.classList.toggle("hidden", f !== "all" && c.getAttribute("data-cat") !== f);
+      });
+    });
+  });
+}
+
+// Teklif formu: bilgileri hazır WhatsApp mesajına çevirir
+const quoteForm = document.getElementById("quote-form");
+if (quoteForm) {
+  quoteForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const f = new FormData(quoteForm);
+    const lines = [
+      "Merhaba, teklif almak istiyorum.",
+      `Ad Soyad: ${f.get("ad")}`,
+      `Telefon: ${f.get("tel")}`,
+      `Hizmet: ${f.get("hizmet")}`,
+      f.get("sehir") ? `Şehir: ${f.get("sehir")}` : "",
+      f.get("not") ? `Not: ${f.get("not")}` : "",
+    ].filter(Boolean);
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank", "noopener");
+  });
+}
