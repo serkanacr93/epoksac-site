@@ -1,6 +1,8 @@
 
 :root{--bg:#0a1a3c;--bg2:#0e2249;--ink:#f5f1e8;--soft:#b9c4dc;--acc:#e9dfc8;--line:#24407a;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",-apple-system,"Segoe UI",sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
+#hakkimizda{scroll-margin-top:130px}
+.ab{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}.ab h2{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin-bottom:22px}.ab p{margin-bottom:16px}.ab .lead{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.6vw,30px);line-height:1.35;color:var(--acc);margin-bottom:28px}.ab ul{list-style:none;margin:0;padding:0;columns:1}.ab li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}.ab li::before{content:"—";color:var(--acc);margin-right:12px}.ab .tags{margin-top:26px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);font-weight:600}.ab h3{font-family:var(--serif);font-size:24px;margin:0 0 14px}@media(max-width:900px){.ab{grid-template-columns:1fr;gap:36px}}
 body{padding-top:56px}
 .sw{position:fixed;top:0;left:0;right:0;height:56px;z-index:60;display:flex;justify-content:center;align-items:center;background:#071230;border-bottom:1px solid #24407a}
 .sw a{display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(230px,44vw);height:40px;border:1px solid #2f4d8c;color:#b9c4dc;text-decoration:none}
